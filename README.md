@@ -17,10 +17,8 @@ sudo microk8s status --wait-ready
 
 Dla wygody dodajmy się do grupy `microk8s`, żeby nie musieć za każdym razem wołać `sudo` i dodajmy alias, żeby móc napisać `kubectl` zamiast `microk8s.kubectl`:
 ```
-sudo usermod -a -G microk8s q84fh
-sudo chown -f -R q84fh ~/.kube
-echo "alias kubectl='microk8s.kubectl'" >> ~/.bash_aliases
-. ~/.bash_aliases
+sudo snap alias microk8s.kubectl kubectl
+sudo usermod -aG microk8s q84fh
 ```
 
 ## Formowanie klastra
